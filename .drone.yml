@@ -1,0 +1,33 @@
+---
+kind: pipeline
+name: build-publish
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: build
+  pull: always
+  image: spritsail/docker-build
+
+- name: publish
+  pull: always
+  image: spritsail/docker-publish
+  settings:
+    repo: spritsail/velocity
+    tags:
+    - latest
+    - "%label org.label-schema.version"
+    login: {from_secret: docker_login}
+  when:
+    branch:
+    - master
+    event:
+    - push
+
+---
+kind: signature
+hmac: b3f7694f1a91696e1dd96a20d568ce5cc34517cd59d38b239b28b231e591fbaa
+
+...
