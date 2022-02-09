@@ -1,7 +1,7 @@
 FROM spritsail/alpine:3.15
 
 ARG VELOCITY_VER=3.1.2-SNAPSHOT
-ARG VELOCITY_BUILD=110
+ARG VELOCITY_BUILD=112
 
 LABEL maintainer="Spritsail <velocity@spritsail.io>" \
       org.label-schema.vendor="Spritsail" \
