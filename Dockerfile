@@ -12,7 +12,7 @@ LABEL maintainer="Spritsail <velocity@spritsail.io>" \
       io.spritsail.version.velocity=${VELOCITY_VER}-${VELOCITY_BUILD}
 
 RUN apk --no-cache add openjdk17-jre-headless nss
-ADD https://api.papermc.io/v2/projects/velocity/versions/${VELOCITY_VER}/builds/${VELOCITY_BUILD}/downloads/velocity-${VELOCITY_VER}-${VELOCITY_BUILD}.jar
+ADD https://api.papermc.io/v2/projects/velocity/versions/${VELOCITY_VER}/builds/${VELOCITY_BUILD}/downloads/velocity-${VELOCITY_VER}-${VELOCITY_BUILD}.jar /velocity.jar
 
 WORKDIR /config
 
