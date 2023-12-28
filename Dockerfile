@@ -1,7 +1,7 @@
 FROM spritsail/alpine:3.15
 
-ARG VELOCITY_VER=3.1.2-SNAPSHOT
-ARG VELOCITY_BUILD=115
+ARG VELOCITY_VER=3.3.0-SNAPSHOT
+ARG VELOCITY_BUILD=312
 
 LABEL maintainer="Spritsail <velocity@spritsail.io>" \
       org.label-schema.vendor="Spritsail" \
@@ -12,7 +12,7 @@ LABEL maintainer="Spritsail <velocity@spritsail.io>" \
       io.spritsail.version.velocity=${VELOCITY_VER}-${VELOCITY_BUILD}
 
 RUN apk --no-cache add openjdk17-jre-headless nss
-ADD https://papermc.io/api/v2/projects/velocity/versions/${VELOCITY_VER}/builds/${VELOCITY_BUILD}/downloads/velocity-${VELOCITY_VER}-${VELOCITY_BUILD}.jar /velocity.jar
+ADD https://api.papermc.io/v2/projects/velocity/versions/${VELOCITY_VER}/builds/${VELOCITY_BUILD}/downloads/velocity-${VELOCITY_VER}-${VELOCITY_BUILD}.jar
 
 WORKDIR /config
 
