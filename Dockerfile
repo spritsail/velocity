@@ -1,4 +1,4 @@
-FROM spritsail/alpine:3.15
+FROM spritsail/alpine:3.18
 
 ARG VELOCITY_VER=3.3.0-SNAPSHOT
 ARG VELOCITY_BUILD=312
